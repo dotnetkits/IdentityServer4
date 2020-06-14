@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServer4.Extensions;
 using IdentityServer4.Hosting;
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Http;
@@ -56,7 +57,7 @@ namespace IdentityServer4.Endpoints.Results
                 context.Response.SetCache(MaxAge.Value, "Origin");
             }
 
-            return context.Response.WriteJsonAsync(new { keys = WebKeys }, "application/jwk-set+json; charset=UTF-8");
+            return context.Response.WriteJsonAsync(new { keys = WebKeys }, "application/json; charset=UTF-8");
         }
     }
 }
